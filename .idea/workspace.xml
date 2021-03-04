@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f8056fc9-30b9-4ca7-a312-48d72ff6d179" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1pIQt36lWXg2tvmQNXLkBksEB8w" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunManager" selected="Dart Test.getFunction in helpers_test.dart">
+    <configuration name="2 all named paramsPositional in helpers_test.dart" type="DartTestRunConfigurationType" factoryName="Dart Test" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/test/helpers_test.dart" />
+      <option name="scope" value="GROUP_OR_TEST_BY_NAME" />
+      <option name="testName" value="2 all named paramsPositional" />
+      <method v="2" />
+    </configuration>
+    <configuration name="3 zero parameters in helpers_test.dart" type="DartTestRunConfigurationType" factoryName="Dart Test" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/test/helpers_test.dart" />
+      <option name="scope" value="GROUP_OR_TEST_BY_NAME" />
+      <option name="testName" value="3 zero parameters" />
+      <method v="2" />
+    </configuration>
+    <configuration name="4 mixture named and positional in helpers_test.dart" type="DartTestRunConfigurationType" factoryName="Dart Test" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/test/helpers_test.dart" />
+      <option name="scope" value="GROUP_OR_TEST_BY_NAME" />
+      <option name="testName" value="4 mixture named and positional" />
+      <method v="2" />
+    </configuration>
+    <configuration name="5 mixture named and positional &amp; nullable in helpers_test.dart" type="DartTestRunConfigurationType" factoryName="Dart Test" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/test/helpers_test.dart" />
+      <option name="scope" value="GROUP_OR_TEST_BY_NAME" />
+      <option name="testName" value="5 mixture named and positional &amp; nullable" />
+      <method v="2" />
+    </configuration>
+    <configuration name="getFunction in helpers_test.dart" type="DartTestRunConfigurationType" factoryName="Dart Test" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/test/helpers_test.dart" />
+      <option name="scope" value="GROUP_OR_TEST_BY_NAME" />
+      <option name="testName" value="getFunction" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Dart Test.getFunction in helpers_test.dart" />
+        <item itemvalue="Dart Test.5 mixture named and positional &amp; nullable in helpers_test.dart" />
+        <item itemvalue="Dart Test.4 mixture named and positional in helpers_test.dart" />
+        <item itemvalue="Dart Test.3 zero parameters in helpers_test.dart" />
+        <item itemvalue="Dart Test.2 all named paramsPositional in helpers_test.dart" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f8056fc9-30b9-4ca7-a312-48d72ff6d179" name="Default Changelist" comment="" />
+      <created>1614868336206</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614868336206</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="2560" height="310" key="GridCell.Tab.0.bottom" timestamp="1614875457361">
+      <screen x="1680" y="-502" width="2560" height="1080" />
+    </state>
+    <state width="2560" height="310" key="GridCell.Tab.0.bottom/-240.-1080.1920.1080/0.0.1680.1050/1680.-502.2560.1080@1680.-502.2560.1080" timestamp="1614875457361" />
+    <state width="2560" height="310" key="GridCell.Tab.0.center" timestamp="1614875457356">
+      <screen x="1680" y="-502" width="2560" height="1080" />
+    </state>
+    <state width="2560" height="310" key="GridCell.Tab.0.center/-240.-1080.1920.1080/0.0.1680.1050/1680.-502.2560.1080@1680.-502.2560.1080" timestamp="1614875457356" />
+    <state width="2560" height="310" key="GridCell.Tab.0.left" timestamp="1614875457353">
+      <screen x="1680" y="-502" width="2560" height="1080" />
+    </state>
+    <state width="2560" height="310" key="GridCell.Tab.0.left/-240.-1080.1920.1080/0.0.1680.1050/1680.-502.2560.1080@1680.-502.2560.1080" timestamp="1614875457353" />
+    <state width="2560" height="310" key="GridCell.Tab.0.right" timestamp="1614875457358">
+      <screen x="1680" y="-502" width="2560" height="1080" />
+    </state>
+    <state width="2560" height="310" key="GridCell.Tab.0.right/-240.-1080.1920.1080/0.0.1680.1050/1680.-502.2560.1080@1680.-502.2560.1080" timestamp="1614875457358" />
+    <state x="2667" y="-236" width="586" height="548" key="find.popup" timestamp="1614872638964">
+      <screen x="1680" y="-502" width="2560" height="1080" />
+    </state>
+    <state x="2667" y="-236" width="586" height="548" key="find.popup/-240.-1080.1920.1080/0.0.1680.1050/1680.-502.2560.1080@1680.-502.2560.1080" timestamp="1614872638964" />
+    <state x="2625" y="-261" width="670" height="676" key="search.everywhere.popup" timestamp="1614872660651">
+      <screen x="1680" y="-502" width="2560" height="1080" />
+    </state>
+    <state x="2625" y="-261" width="670" height="676" key="search.everywhere.popup/-240.-1080.1920.1080/0.0.1680.1050/1680.-502.2560.1080@1680.-502.2560.1080" timestamp="1614872660651" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/helpers.dart</url>
+          <line>57</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
