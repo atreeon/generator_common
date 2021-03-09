@@ -12,9 +12,21 @@ class Interface {
   toString() => "${this.type}|${this.typeArgsTypes}|${this.typeParamsNames}";
 }
 
-class NameType {
-  final String type;
+class GenericsNameType {
   final String name;
+  final String? type;
+
+  GenericsNameType(
+    this.name,
+    this.type,
+  );
+
+  toString() => "${this.name}:${this.type}";
+}
+
+class NameType {
+  final String name;
+  final String type;
 
   NameType(this.name, this.type);
 
@@ -32,22 +44,24 @@ class InterfaceWithComment extends Interface {
   }) : super(type, typeArgsTypes, typeParamsNames);
 }
 
-class NameTypeWithComment extends NameType {
+class NameTypeWithComment<TMeta1> extends NameType {
   final String? comment;
+  final TMeta1? meta1;
 
   NameTypeWithComment(
     String name,
     String type, {
     this.comment,
+    this.meta1,
   }) : super(name, type);
 }
 
-class MethodDetails {
+class MethodDetails<TMeta1> {
   final String? methodComment;
   final String methodName;
-  final List<NameTypeWithComment> paramsPositional;
-  final List<NameTypeWithComment> paramsNamed;
-  final List<NameType> generics;
+  final List<NameTypeWithComment<TMeta1>> paramsPositional;
+  final List<NameTypeWithComment<TMeta1>> paramsNamed;
+  final List<GenericsNameType> generics;
   final String returnType;
 
   MethodDetails(

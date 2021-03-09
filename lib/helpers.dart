@@ -23,62 +23,35 @@ String getClassComment(List<Interface> interfaces, String? classComment) {
   return a.join("\n").trim() + "\n";
 }
 
-MethodDetails GetMethodDetailsForMethodElement<T>(MethodElement method, T GetMetaData()) {
-  var returnType = method.type.returnType.toString();
+MethodDetails<TMeta1> getMethodDetailsForFunctionType<TMeta1>(
+  FunctionTypedElement fn,
+  TMeta1 GetMetaData(ParameterElement parameterElement),
+) {
+  var returnType = fn.returnType.toString();
 
-  var paramsPositional2 = method.type.parameters.where((x) => x.isPositional);
-  var paramsNamed2 = method.type.parameters.where((x) => x.isNamed);
+  var paramsPositional2 = fn.parameters.where((x) => x.isPositional);
+  var paramsNamed2 = fn.parameters.where((x) => x.isNamed);
 
   var paramsPositional = paramsPositional2
-      .map((x) => NameTypeWithComment(
+      .map((x) => NameTypeWithComment<TMeta1>(
             x.name.toString(),
             x.type.toString(),
             comment: x.documentationComment,
+            meta1: GetMetaData(x),
           ))
       .toList();
   var paramsNamed = paramsNamed2
-      .map((x) => NameTypeWithComment(
+      .map((x) => NameTypeWithComment<TMeta1>(
             x.name.toString(),
             x.type.toString(),
             comment: x.documentationComment,
+            meta1: GetMetaData(x),
           ))
       .toList();
 
-  var typeParameters = method.typeParameters //
-      .map((e) => NameType(e.name, e.runtimeType.toString()))
+  var typeParameters2 = fn.typeParameters //
+      .map((e) => GenericsNameType(e.name, e.bound == null ? null : e.bound.toString()))
       .toList();
 
-  return MethodDetails(method.documentationComment, method.name, paramsPositional, paramsNamed, typeParameters, returnType);
-}
-
-//final String Function(String name,) fn;
-String getFunctionDefinition(
-  MethodDetails methodDetails,
-) {
-  if (methodDetails.paramsPositional.length == 0 && methodDetails.paramsNamed.length == 0) {
-    return "${formattedComment(methodDetails.methodComment)}${methodDetails.returnType} Function()";
-  }
-
-  var strParamsPositional = methodDetails.paramsPositional.map((x) => //
-      "${formattedComment(x.comment)}${x.type} ${x.name}").join(",\n");
-
-  var strParamsNamed = methodDetails.paramsNamed
-      .map((x) => //
-          x.type.contains("?") //
-              ? "${formattedComment(x.comment)}${x.type} ${x.name}"
-              : "${formattedComment(x.comment)}required ${x.type} ${x.name}")
-      .join(",\n");
-
-  var params = [
-    if (methodDetails.paramsPositional.isNotEmpty) //
-      strParamsPositional,
-    if (methodDetails.paramsNamed.isNotEmpty) //
-      "{\n$strParamsNamed}",
-  ].join(",");
-
-  return "${formattedComment(methodDetails.methodComment)}${methodDetails.returnType} Function(\n$params)";
-}
-
-String formattedComment(String? comment) {
-  return comment == null ? "" : comment + "\n";
+  return MethodDetails<TMeta1>(fn.documentationComment, fn.name ?? "", paramsPositional, paramsNamed, typeParameters2, returnType);
 }
