@@ -1,8 +1,9 @@
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:analyzer/dart/element/element.dart';
+import 'package:analyzer/dart/element/type.dart';
+import 'package:dartx/dartx.dart';
 
-// ignore: import_of_legacy_library_into_null_safe
-
+import 'NameType.dart';
 import 'classes.dart';
 
 /// [interfaces] a list of interfaces the class implements
@@ -14,7 +15,7 @@ String getClassComment(List<Interface> interfaces, String? classComment) {
     var interfaceComment = e is InterfaceWithComment && e.comment != null //
         ? "\n${e.comment}"
         : "";
-    return "///implements [${e.type}]\n///\n$interfaceComment\n///";
+    return "///implements [${e.interfaceName}]\n///\n$interfaceComment\n///";
   }).toList();
 
   if (classComment != null) //
@@ -33,17 +34,19 @@ MethodDetails<TMeta1> getMethodDetailsForFunctionType<TMeta1>(
   var paramsNamed2 = fn.parameters.where((x) => x.isNamed);
 
   var paramsPositional = paramsPositional2
-      .map((x) => NameTypeWithComment<TMeta1>(
+      .map((x) => NameTypeClassCommentData<TMeta1>(
             x.name.toString(),
             x.type.toString(),
+            null,
             comment: x.documentationComment,
             meta1: GetMetaData(x),
           ))
       .toList();
   var paramsNamed = paramsNamed2
-      .map((x) => NameTypeWithComment<TMeta1>(
+      .map((x) => NameTypeClassCommentData<TMeta1>(
             x.name.toString(),
             x.type.toString(),
+            null,
             comment: x.documentationComment,
             meta1: GetMetaData(x),
           ))
@@ -54,4 +57,26 @@ MethodDetails<TMeta1> getMethodDetailsForFunctionType<TMeta1>(
       .toList();
 
   return MethodDetails<TMeta1>(fn.documentationComment, fn.name ?? "", paramsPositional, paramsNamed, typeParameters2, returnType);
+}
+
+List<NameTypeClassComment> getAllFields(List<InterfaceType> interfaceTypes, ClassElement element) {
+  var superTypeFields = interfaceTypes //
+      .where((x) => x.element.name != "Object")
+      .flatMap((st) => st.element.fields.map((f) => //
+          NameTypeClassComment(f.name, f.type.toString(), st.element.name, comment: f.getter?.documentationComment)))
+      .toList();
+
+//  if(element is ClassElement){
+//    fields.addAll(element.fields.map((f) => //
+//    NameTypeClassComment(f.name, f.type.toString(), element.name, comment: f.getter?.documentationComment)).toList());
+//  } else if(element is InterfaceType){
+//    fields.addAll(element.fields.map((f) => //
+//    NameTypeClassComment(f.name, f.type.toString(), element.name, comment: f.getter?.documentationComment)).toList());
+//  }
+
+  var classFields = element.fields.map((f) => //
+      NameTypeClassComment(f.name, f.type.toString(), element.name, comment: f.getter?.documentationComment)).toList();
+
+  //distinct, will keep classFields over superTypeFields
+  return (classFields + superTypeFields).distinctBy((x) => x.name).toList();
 }

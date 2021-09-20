@@ -6,7 +6,7 @@ void main() {
   group("getClassComment", () {
     test("1x", () {
       var interfaces = [
-        InterfaceWithComment("\$A", ["int", "String"], ["T1", "T2"]),
+        InterfaceWithComment("\$A", ["int", "String"], ["T1", "T2"], []),
       ];
 
       var result = getClassComment(interfaces, "///blah");
@@ -22,7 +22,7 @@ void main() {
 
     test("2x null class comment", () {
       var interfaces = [
-        InterfaceWithComment("\$A", ["int", "String"], ["T1", "T2"]),
+        InterfaceWithComment("\$A", ["int", "String"], ["T1", "T2"], []),
       ];
 
       var result = getClassComment(interfaces, "");
@@ -37,9 +37,9 @@ void main() {
 
     test("3x with all comments", () {
       var interfaces = [
-        InterfaceWithComment("\$A", ["int", "String"], ["T1", "T2"], comment: "///blah1"),
-        InterfaceWithComment("\$A", ["int", "String"], ["T1", "T2"]),
-        InterfaceWithComment("\$A", ["int", "String"], ["T1", "T2"], comment: "///blah2"),
+        InterfaceWithComment("\$A", ["int", "String"], ["T1", "T2"], [], comment: "///blah1"),
+        InterfaceWithComment("\$A", ["int", "String"], ["T1", "T2"], []),
+        InterfaceWithComment("\$A", ["int", "String"], ["T1", "T2"], [], comment: "///blah2"),
       ];
 
       var result = getClassComment(interfaces, "///blah");
