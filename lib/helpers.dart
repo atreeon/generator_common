@@ -61,9 +61,9 @@ MethodDetails<TMeta1> getMethodDetailsForFunctionType<TMeta1>(
 
 List<NameTypeClassComment> getAllFields(List<InterfaceType> interfaceTypes, ClassElement element) {
   var superTypeFields = interfaceTypes //
-      .where((x) => x.element.name != "Object")
-      .flatMap((st) => st.element.fields.map((f) => //
-          NameTypeClassComment(f.name, f.type.toString(), st.element.name, comment: f.getter?.documentationComment)))
+      .where((x) => x.name != "Object")
+      .flatMap((st) => st.element2.fields.map((f) => //
+          NameTypeClassComment(f.name, f.type.toString(), st.element2.name, comment: f.getter?.documentationComment)))
       .toList();
 
 //  if(element is ClassElement){
